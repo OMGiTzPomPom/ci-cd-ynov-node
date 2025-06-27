@@ -1,4 +1,3 @@
-version: '3.8'
 services:
   mongodb:
     image: mongo:6.0
@@ -10,6 +9,7 @@ services:
       MONGO_INITDB_DATABASE: myapp
     ports:
       - "27017:27017"
+
   api:
     build: .
     container_name: node-api
@@ -21,6 +21,7 @@ services:
       - "4000:4000"
     depends_on:
       - mongodb
+
   init-admin:
     build: .
     command: ["node", "src/init-admin.js"]
@@ -29,3 +30,12 @@ services:
     depends_on:
       - mongodb
     restart: "no"
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - api
