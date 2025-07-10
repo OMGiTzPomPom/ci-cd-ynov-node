@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import { registerUser, listUsers } from '../services/api.js'
+import { registerUser, listUsers } from '../services/userApi.js'
 
 const form = ref({ fullname: '', email: '', password: '' })
 const users = ref([])

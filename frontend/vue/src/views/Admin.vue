@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { listUsers, deleteUser, getUserDetail } from '../services/api.js'
+import { listUsers, deleteUser, getUserDetail, loginUser } from '../services/userApi.js'
 
 const admin = ref({ email: '', password: '' })
 const users = ref([])
