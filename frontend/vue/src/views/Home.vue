@@ -21,7 +21,9 @@ onMounted(loadUsers)
 
 <template>
   <div>
-    <h1>Inscription</h1>
+    <router-link to="/admin">Login Admin</router-link><br/>
+    <router-link to="/users">Login Users</router-link>
+      <h1>Inscription</h1>
     <form @submit.prevent="submitForm">
       <input v-model="form.fullname" placeholder="Nom complet" required />
       <input v-model="form.email" placeholder="Email" required />

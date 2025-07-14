@@ -26,6 +26,8 @@ const showDetail = async (id) => {
 
 <template>
   <div>
+      <router-link to="/">Home</router-link><br/>
+      <router-link to="/users">Login Users</router-link>
     <h1>Admin</h1>
     <form @submit.prevent="loadDetails">
       <input v-model="admin.email" placeholder="Email admin" />
