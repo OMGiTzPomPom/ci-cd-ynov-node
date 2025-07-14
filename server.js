@@ -40,18 +40,12 @@ app.delete('/v1/users/:id', auth, adminOnly, deleteUser);
 // Route POST pour login
 app.post('/v1/login', login);
 
-
-
 // Route POST pour créer un post (utilisateur connecté)
-app.post('/v1/posts', auth, createPost);
+app.post('/v1/posts', createPost);
 // Route GET pour lister tous les posts (publique ou protégée selon ton besoin)
 app.get('/v1/posts', getAllPosts);
 // Route GET pour un post précis
 app.get('/v1/posts/:id', getPostById);
-// Route PUT pour mettre à jour un post (admin seulement ou auteur uniquement)
-app.put('/v1/posts/:id', auth, adminOnly, updatePost);
-// Route DELETE pour supprimer un post (admin seulement ou auteur)
-app.delete('/v1/posts/:id', auth, adminOnly, deletePost);
 
 // Démarrage du serveur (uniquement en local/Docker, pas sur Vercel/Serverless)
 if (require.main === module) {
