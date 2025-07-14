@@ -12,7 +12,7 @@ exports.createPost = async (req, res) => {
 
         res.status(201).json(savedPost);
     } catch (error) {
-        res.status(500).json({ error: 'Erreur lors de la création du post.' });
+        res.status(500).json({ error: 'Erreur lors de la création du post.', details: error.message, stack: error.stack });
     }
 };
 
