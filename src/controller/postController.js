@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 exports.createPost = async (req, res) => {
     try {
         const { title, content } = req.body;
-        const author = req.user ? req.user._id : "Anonymous";
+        const author = req.user ? req.user._id : null;
 
         const newPost = new Post({ title, content, author });
         const savedPost = await newPost.save();
